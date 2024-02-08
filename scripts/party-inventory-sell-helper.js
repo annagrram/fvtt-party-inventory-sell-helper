@@ -24,9 +24,15 @@ Hooks.on('renderPartySheetPF2e', (partySheet, dom, partyData) => {
                             icon: `<i class="fas fa-check"></i>`,
                             label: game.i18n.localize("Yes"),
                             callback: async (form) => {
-                                await item.delete();
-                                const price = item.assetValue.scale(form.find('.percent-field').val() / 100);
-                                await partyInventory.addCoins(price);
+                                const requestedScaler = form.find('.percent-field').val() / 100;
+                                if (Number.isFinite(requestedScaler) && requestedScaler > 0) {
+                                    await item.delete();
+                                    const price = item.assetValue.scale(requestedScaler);
+                                    await partyInventory.addCoins(price);
+                                }
+                                else {
+                                    ui.notifications.error("PartyInventorySellHelper.InvalidPercentageError", { localize: true });
+                                }
                             },
                         },
                         cancel: {

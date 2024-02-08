@@ -1,5 +1,6 @@
 {
   "PartyInventorySellHelper": {
-    "SellItemQuestion": "Are you sure you want to sell {item} for {field}% of the value?"
+    "SellItemQuestion": "Are you sure you want to sell {item} for {field}% of the value?",
+    "InvalidPercentageError": "Cannot sell item using an invalid percentage value"
   }
 }
