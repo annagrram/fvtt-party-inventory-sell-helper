@@ -1,0 +1,5 @@
+{
+  "PartyInventorySellHelper": {
+    "SellItemQuestion": "Are you sure you want to sell {item} for {field}% of the value?"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "party-inventory-sell-helper",
+  "title": "Party Inventory Sell Helper",
+  "description": "Helps you sell non-treasure items from the party's inventory.",
+  "version": "0.1",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11",
+    "maximum": "11"
+  },
+  "esmodules": [
+    "scripts/party-inventory-sell-helper.js"
+  ],
+  "styles": [
+    "styles/party-inventory-sell-helper.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "authors": [
+    {
+      "name": "Annara",
+      "discord": "annarra"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "verified": "5.13.4"
+        }
+      }
+    ]
+  }
+}
