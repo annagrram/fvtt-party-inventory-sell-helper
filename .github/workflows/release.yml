@@ -1,0 +1,21 @@
+  name: Release
+  on:
+    push:
+      tags:
+        - 'v*.*'
+  jobs:
+    release:
+      runs-on: ubuntu-latest
+      permissions:
+        contents: write
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Package
+          run: zip -r ${GITHUB_REPOSITORY#*/}.zip ${GITHUB_REPOSITORY#*/}/{lang, scripts, styles, module.json}
+
+        - name: Release
+          uses: ncipollo/release-action@v1
+          with:
+            artifacts: "${GITHUB_REPOSITORY#*/}.zip, ${GITHUB_REPOSITORY#*/}/module.json"
